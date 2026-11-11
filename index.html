@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hindi Video Dubber</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="mark">HD</div>
+      <div><h1>Hindi Video Dubber</h1><p class="sub">A simple starter workspace for video dubbing</p></div>
+    </header>
+
+    <section class="panel">
+      <h2>1. Choose your video</h2>
+      <label class="upload" for="videoFile">
+        <span class="upload-icon">＋</span>
+        <strong>Choose a video from your device</strong>
+        <small>MP4, MOV or WebM · Select a file stored on your phone</small>
+      </label>
+      <input id="videoFile" type="file" accept="video/mp4,video/quicktime,video/webm,video/*">
+      <p id="fileInfo" class="muted">No video selected yet.</p>
+      <video id="preview" controls playsinline hidden></video>
+    </section>
+
+    <section class="panel">
+      <h2>2. Choose languages</h2>
+      <div class="fields">
+        <label>Original video language
+          <select id="sourceLang">
+            <option value="auto">Detect automatically</option>
+            <option value="English">English</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>Dubbed language
+          <select id="targetLang">
+            <option value="Hindi">Hindi</option>
+            <option value="Hinglish">Hinglish (easy Hindi-English)</option>
+          </select>
+        </label>
+      </div>
+      <label class="check"><input id="keepMusic" type="checkbox" checked> Keep original background music and sound effects (requires a source-separation audio engine)</label>
+    </section>
+
+    <section class="panel">
+      <h2>3. Prepare the dubbing project</h2>
+      <label>Audio processing part length
+        <select id="chunkLength">
+          <option value="5">5 minutes</option>
+          <option value="10" selected>10 minutes</option>
+          <option value="15">15 minutes</option>
+        </select>
+      </label>
+      <button id="prepareBtn" class="primary" disabled>Prepare project file</button>
+      <p id="status" class="status" role="status">Choose a video first.</p>
+      <p class="notice"><strong>Important:</strong> This ZIP is the website starter, not a complete AI dubbing engine. Automatic speech recognition, translation, natural voice generation, timing and music separation need a separate backend. This starter does not upload your video or pretend to generate a dubbed result.</p>
+    </section>
+
+    <footer>Starter version · Your selected video stays in this browser page.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
